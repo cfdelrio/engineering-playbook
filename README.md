@@ -21,7 +21,30 @@ La meta es simple: que cualquier proyecto nuevo arranque ya sabiendo *cómo se h
 1. Leé [`playbook/00-manifesto.md`](./playbook/00-manifesto.md) — el por qué.
 2. Leé [`CONSTITUTION.md`](./CONSTITUTION.md) — lo no negociable.
 3. Recorré el `playbook/` en orden numérico.
-4. Cuando arranques un proyecto, copiá lo que necesites de `templates/` y `claude/`.
+4. Cuando arranques un proyecto, seguí la guía de abajo.
+
+## Cómo usar este playbook en un proyecto nuevo
+
+**Para cada proyecto nuevo** (AURORA, ProdeCaballito, Engage, Storysell u otros):
+
+1. **Copia los templates** que necesites:
+   - Crea un [`CLAUDE.md`](./templates/system-prompt-template.md) con el contexto específico de tu proyecto, importando desde [`claude/`](./claude).
+   - Crea la estructura de [`docs/`](./templates/project-readme-template.md): `docs/adr/`, `docs/specs/`, `docs/`.
+   - Copia el [`README.md`](./templates/project-readme-template.md) del proyecto y adaptalo.
+
+2. **Registra tus decisiones**:
+   - Toda decisión de arquitectura → [`adr-template.md`](./templates/adr-template.md) en `docs/adr/`.
+   - Toda feature no trivial → [`feature-spec-template.md`](./templates/feature-spec-template.md) en `docs/specs/`.
+
+3. **Configura tu CI/CD**:
+   - Las [quality gates](./CONSTITUTION.md#artículo-4--quality-gates) son no negociables.
+   - Ver [`playbook/09-build.md`](./playbook/09-build.md) para detalles de setup.
+
+4. **Trabajo asistido por IA**:
+   - Referencia [`claude/`](./claude) desde tu `CLAUDE.md`.
+   - Mantén ese contexto sincronizado conforme evolucionas.
+
+**Ejemplo completo**: ver [`examples/aurora/`](./examples/aurora) — es una aplicación real de toda esta doctrina.
 
 ## Principios rectores (resumen)
 
