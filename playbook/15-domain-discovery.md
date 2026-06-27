@@ -20,40 +20,43 @@ Domain Discovery es el proceso de entender un dominio desde las decisiones hacia
 
 > El dominio no nace de entidades. Nace de las decisiones que queremos mejorar.
 
-DDD² es la extensión práctica del Domain Driven Design para equipos que trabajan con IA.
+DDD² es un **método de descubrimiento**. No es un reemplazo del Domain Driven Design — es lo que hacés *antes* de aplicarlo.
 
-### La diferencia con DDD tradicional
+### Qué es y qué no es
 
-El DDD clásico parte de la pregunta: **¿cuáles son las entidades del dominio?**
+DDD² responde una pregunta que el DDD clásico asume resuelta: **¿cómo sabemos qué dominio estamos modelando?**
 
-DDD² parte de la pregunta: **¿qué decisiones toman los expertos del dominio?**
+El DDD clásico da herramientas excelentes para diseñar software una vez que entendés el dominio. DDD² es el proceso de llegar a ese entendimiento.
 
-| DDD Tradicional | DDD² |
-|---|---|
-| Parte de entidades y sus atributos | Parte de decisiones y su contexto |
-| El lenguaje ubícuo emerge de los objetos | El lenguaje emerge del razonamiento del experto |
-| Los bounded contexts agrupan entidades relacionadas | Los bounded contexts agrupan decisiones relacionadas |
-| "¿Qué es un Pedido?" | "¿Cuándo un pedido debe priorizarse sobre otro?" |
-| Modelo → Software | Decisiones → Conocimiento → Modelo → Software |
+| | DDD² | DDD |
+|---|---|---|
+| **Tipo** | Método de descubrimiento | Metodología de diseño |
+| **Pregunta central** | ¿Qué decisiones toman los expertos? | ¿Cómo modelamos ese conocimiento en software? |
+| **Entrada** | Expertos del dominio, observación, entrevistas | Conocimiento de dominio ya entendido |
+| **Salida** | Mapa de decisiones, lenguaje candidato, boundaries candidatos | Entidades, aggregates, bounded contexts implementados |
+| **Cuándo ocurre** | Antes de diseñar | Después de descubrir |
 
-### Por qué importa la diferencia
+DDD² produce los insumos que DDD necesita para funcionar bien.
+
+### Por qué importa la secuencia
 
 Los expertos del dominio no piensan en objetos. Piensan en situaciones, juicios y consecuencias. Cuando le preguntás a un entrenador "¿qué es un entrenamiento?", te da una definición genérica. Cuando le preguntás "¿cuándo le decís a un atleta que descanse en lugar de entrenar?", te revela el conocimiento real del dominio.
 
-Las decisiones son el punto de acceso al conocimiento experto.
+Las decisiones son el punto de acceso al conocimiento experto. Sin ese acceso, el DDD opera sobre suposiciones.
 
 ### Relación con el resto del playbook
 
-DDD² no reemplaza al DDD — es una puerta de entrada:
-
 ```
-Architecture First    →   ¿La arquitectura soporta las decisiones críticas?
-DDD²                  →   ¿Cuáles son esas decisiones?
+DDD²                  →   ¿Qué decisiones queremos mejorar?
+                               ↓
 Domain Driven Design  →   ¿Qué modelo representa ese conocimiento?
-Spec Driven Dev       →   ¿Cómo especificamos features que mejoran decisiones?
+                               ↓
+Architecture First    →   ¿Qué arquitectura soporta ese modelo?
+                               ↓
+Spec Driven Dev       →   ¿Cómo especificamos cada feature de ese modelo?
 ```
 
-El orden importa: las decisiones revelan el dominio, el dominio determina la arquitectura.
+Cada capa asume que la anterior está resuelta. Empezar por Architecture First sin Discovery produce arquitecturas elegantes para el dominio equivocado.
 
 ---
 
