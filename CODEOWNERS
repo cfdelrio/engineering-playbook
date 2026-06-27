@@ -1,0 +1,31 @@
+# CODEOWNERS
+#
+# Each line defines who owns specific paths.
+# The last matching pattern takes the most precedence.
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything in the repository.
+# Changes to any file require review from @cfdelrio unless overridden below.
+* @cfdelrio
+
+# Constitution and decision framework — highest scrutiny.
+# Any change here has transversal impact across all projects.
+/CONSTITUTION.md @cfdelrio
+/lifecycle/decision-framework.md @cfdelrio
+/lifecycle/ADL.md @cfdelrio
+
+# Governance and release process — maintain carefully.
+/docs/governance/ @cfdelrio
+
+# Templates — users depend on these for new projects.
+# Changes should not break existing projects that copied them.
+/templates/ @cfdelrio
+
+# Claude context — affects how AI agents behave across all projects.
+/claude/ @cfdelrio
+
+# FUTURE: As the team grows, expand ownership:
+#
+# /playbook/ @engineering-team
+# /standards/ @engineering-team
+# /examples/ @engineering-team
